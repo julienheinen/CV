@@ -1,0 +1,441 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8"/>
+    <meta name="description" content="CV de Nomen Nescio"/>
+    <meta name="author" content="Nomen Nescio">
+    <title>CV Nomen Nescio</title>
+    <style>
+        /* Style général pour le corps de la page. Je souhaitais créer le même style qu'une visioneuse de pdf. Lorsqu'on l'ouvre avec, le pdf est au milieu, puis autour c'est un fond de couleur. Alors, en appliquant cette couleur à body, je peux créer presque le même style. ainsi, body est dans un sorte de brun foncé. Cela force le regard à se positionner sur le cv  */
+        body {
+background-color: rgba(83, 74, 74, 0.891);
+
+}
+/* Il s'agit de la div qui contient le cv. Je lui ai mis une couleur blanche, puis j'ai définit la hauteur et largeur en fonction de éléments à y mettre. Ensuite, j'ai définit la position absolut en pourcentages. Cela donne un rendu qui s'adapte à tout les navigateurs et toutes tailles d'écrans. Enfin, le translate permet de bien cadrer la div dans la navigateur.  */
+#place {
+background-color: rgb(255, 255, 255);
+height: 1320px;
+width: 800px;
+position: absolute;
+top: 80%;
+left: 50%;
+transform: translate(-50%, -50%);
+}
+/* Il s'agit de la bannière de gauche. Où on retrouve les informations et sections de contact, compétences et langues. Afin d'améliorer le confort visuel, j'ai créer une autre div, un gris proche du blanc, mais assez persceptible par l'oeil */
+#banniere_gauche {
+background-color: rgb(244, 244, 244);
+height: 1320px;
+width: 270px;
+position: absolute;
+top: 0; /* R&eacute;glez la position en haut de la div "place" */
+left: 0; /* R&eacute;glez la position à gauche de la div "place" */ }
+
+/* Mon nom et prénom, en bleu et placé à la main pour être le plus au milieu possible et visible tout en haut du cv */
+#nom {
+color: rgb(39, 185, 236);
+position: absolute;
+top: 6%;
+left: 50%;
+}
+/* La photo de profil, ronde pour créer un confort visuel, car les formes rondes sont généralement perçus comme moins menaçants et plus agréables pour les yeux. Mais sa forme était déjà dans d'origine, donc il n'y a aucune mise en forme ici*/
+#photo {
+width: 65%;
+position: absolute;
+top: 3%; /* R&eacute;glez la position en haut de la div "place" */
+left: 16%;
+
+}
+/* une barre bleu de séparation contact, créée dans une div puis mis en forme hauteur largeur, position, couleur */
+#barre_bleu_gauche {
+background-color: rgb(39, 185, 236);
+height: 3px;
+width: 220px;
+position: absolute;
+top: 22%; 
+left: 18%;
+}
+/* le titre de section conatct */
+#contact {
+position: absolute; 
+top : 18%;
+left : 21%;
+text-transform: uppercase;
+}
+/* l'icone du téléphone, suivi du texte à droite */
+#icone_tel {
+position :absolute;
+top: 24%;
+left: 17%;
+width: 17px;
+}
+#phone {
+position: absolute;
+top: 24%;
+left: 30%;
+font-family: "Arial";
+}
+/* l'icone du mail, suivi du texte à droite */
+#icone_mail {
+position :absolute;
+top: 27.5%;
+left: 15%;
+width: 25px;
+}
+#adresse_mail {
+position: absolute;
+top: 28%;
+left: 30%;
+font-family: "Arial";
+}
+/* l'icone de la date de naissance, suivi du texte à droite */
+#icone_date_naissance {
+position :absolute;
+top: 31.5%;
+left: 15%;
+width: 31px;
+}
+#date_naissance {
+position: absolute;
+top: 32%;
+left: 30%;
+font-family: "Arial";
+}
+/* l'icone de l'adresse postale, suivi du texte à droite */
+#icone_adresse_postale{
+position :absolute;
+top: 36%;
+left: 16%;
+width: 30px;
+}
+#adresse_postale {
+position: absolute;
+top: 35%;
+left: 30%;
+font-family: "Arial";
+}
+/* une barre bleu de séparation compétence, créée dans une div puis mis en forme hauteur largeur, position, couleur */
+#barre_bleu_gauche_2 {
+background-color: rgb(39, 185, 236);
+height: 3px;
+width: 220px;
+position: absolute;
+top: 44%;
+left: 18%; 
+}
+/* le titre des compétences */
+#titre_competences {
+position: absolute;
+top : 40% ; 
+left : 21%;
+text-transform: uppercase;
+}
+/* le texte dans la section compétences, en arial certes une police non libre de droits, avec comme degré de noir 550, car utiliser strong aurait augmenté la taille du texte */
+#competences {
+position: absolute;
+top: 43.3%;
+left: 3%;
+font-family: "Arial";
+font-weight: 550;
+list-style-image: url(checkmark.gif);
+}
+#competences li {
+margin-top: 10px; /* Ajoute de l'espace entre chaque élément de la liste */
+}
+/* une barre bleu de séparatio langues, créée dans une div puis mis en forme hauteur largeur, position, couleur */
+#barre_bleu_gauche_3 {
+background-color: rgb(39, 185, 236);
+height: 3px;
+width: 220px;
+position: absolute;
+top: 93%;
+left: 18%; 
+}
+/* permet d'ajouter à chaque li un espacement de 0.9 , idéal pour avoir un texte agréable à lire */
+li {
+line-height: 0.9
+}
+/* Titre de la section langues suivi des langues texte aussi en arial*/
+#langues {
+position:absolute;
+top : 89%;
+left: 21%;
+text-transform: uppercase;
+}
+
+#anglais {
+position: absolute;
+top: 94%;
+left: 22%;
+font-family: "Arial";
+
+}
+#allemand {
+position: absolute;
+top: 96%;
+left: 22%;
+font-family: "Arial";
+
+}
+/* barre de séparation section présentation */
+#barre_bleu_presentation {
+background-color: rgb(39, 185, 236);
+height: 3px;
+width: 420px;
+position: absolute;
+top: 22%;
+left: 40%;
+}
+/* le titre de la section présentation en maj depuis le css comme tout les autres titres */
+#titre_presentation {
+position: absolute; 
+top : 18%;
+left : 42%;
+text-transform: uppercase;
+}
+/* la présentation en arial, espacement des lignes de 1.5, et augmentation du noir de 550 */
+#presentation {
+position: absolute;
+top: 23%;
+left: 40%;
+font-family: "Arial";
+font-weight: 550;
+line-height: 1.5;
+}
+/* barre de séparartion formation */
+#barre_bleu_education {
+background-color: rgb(39, 185, 236);
+height: 3px;
+width: 420px;
+position: absolute;
+top: 41%;
+left: 40%;
+}
+/* titre formation */
+#titre_education {
+position: absolute; 
+top : 37%;
+left : 42%;
+text-transform: uppercase;
+}
+/* Afin de créer une sorte de frise chronologique, mais verticale, j'ai en html créé des div vides, pour la barre et les points. Ensuite, en css, j'ai mis tout cela en forme, la position, la largeur de 3px, la hauteur de 500px, la couleur de fond en gris */
+#barre_vertical {
+position: absolute;
+top: 43%;
+left: 40%;
+width: 3px;
+height: 385px;
+background-color: grey;
+}
+/* C'est une classe, pour la mise en forme des points des évènements sur la barre verticale ( frise chronologique ). J'ai créé un carré de 12 sur 12px. Couleur blanche, bordures noires l'effet de ronduer avec border radius*/
+.point { 
+transform: translateY(-50%);
+width: 12px;
+height: 12px;
+background-color: #fff;
+border: 2px solid #000;
+border-radius: 50%;
+z-index: 1;
+}
+/* les différents points*/
+.point1 {
+position: absolute;
+top: 43.2%;
+left: 39.3%;
+}
+/* Les informations de l'iut, en arial et certain textes en gris, pour mieuc disserner les infos*/
+#iut_date {
+position: absolute;
+top: 42.5%;
+left: 44%;
+font-family: "Arial";
+}
+#iut_ville {
+position: absolute;
+top: 44.5%;
+left: 44%; 
+font-family: "Arial";
+color: grey;
+}
+#iut {
+position: absolute;
+top: 46.5%;
+left: 44%; 
+font-family: "Arial";
+}
+#iut_formation{
+position: absolute;
+top: 48.5%;
+left: 44%; 
+font-family: "Arial";
+color: grey;
+}
+.point2{
+position: absolute;
+top: 58.7%;
+left: 39.3%;
+}
+/* Les informations du lycée,  en arial et certain textes en gris, pour mieuc disserner les infos*/
+#lycee_date{
+position: absolute;
+top: 58%;
+left: 44%; 
+font-family: "Arial";
+}
+#lycee_ville{
+position: absolute;
+top: 60%;
+left: 44%; 
+font-family: "Arial";
+color: grey;
+}
+#lycee_formation{
+position: absolute;
+top: 64%;
+left: 44%; 
+font-family: "Arial";
+color: grey;
+}
+#lycee{
+position: absolute;
+top: 62%;
+left: 44%; 
+font-family: "Arial";
+}
+#lycee_spe{
+position: absolute;
+top: 66%;
+left: 44%; 
+font-family: "Arial";
+}
+#lycee_other{
+position: absolute;
+top: 69%;
+left: 44%;
+font-family: "Arial";
+color: grey;
+}
+
+/*barre bleu de séparation section centres d'interets*/
+#barre_bleu_centres {
+background-color: rgb(39, 185, 236);
+height: 3px;
+width: 420px;
+position: absolute;
+top: 77%;
+left: 40%;
+}
+/*Titres centres d'interets en maj ainsi que son texte en arial*/
+#titre_centres {
+position: absolute;
+top: 73%;
+left: 42%;
+text-transform: uppercase;
+}
+#centres{
+position: absolute;
+top: 79%;
+left: 40%;
+font-family: "Arial";
+font-weight: 550;
+line-height: 1.5;
+}
+/*boutons de navigation, menu en haut de la page . Le fond est de couleur blanc, 400px de largeur */
+nav {
+position: absolute;
+top: 13%;
+left: 38%;
+background-color: white;
+width: 400px;
+}
+/* les li de la liste sont côte à côte, avec un espacement padding de 3 px */
+nav ul {
+list-style: none;
+display: flex;
+justify-content: space-around;
+padding: 3px;
+}
+/* les liens sont en couleur noir*/
+nav a {
+text-decoration: none;
+color: black;
+}
+/* lorsqu'on passe dessus, avec la souris sur les liens, ils changent de couleur en vert. Puis, un petit bandeau de 3px en bottom apparait, en couleur bleu */
+nav a:hover {
+border-bottom: 3px solid rgb(39, 185, 236);
+color: #187600;
+
+}
+/*lorsque j'appuie sur le bouton, les lienss deviennt violet*/
+nav a:active {
+color: purple;
+}
+nav li:not(:last-child)::after {
+content: "|"; /* Display a vertical bar as the separator */
+margin: 4px; /* Adjust the spacing around the separator */
+color: #006400; /* Dark green color for the separator */
+}
+.semi_gras {
+font-weight: 600;
+}
+    </style>
+</head>
+<body>
+    <div id="place">
+        <h1 id="nom">Nomen Nescio</h1>
+        <nav>
+            <ul>
+                <li><a href="#titre_presentation">Pr&eacute;sentation</a></li>
+                <li><a href="#titre_education">Formation</a></li>
+                <li><a href="#centres">Centre d'int&eacute;r&ecirc;ts</a></li>
+                <li><a href="#langues">Langues</a></li>
+            </ul>
+        </nav>
+        <h2 id="titre_presentation">pr&eacute;sentation</h2>
+        <div id="barre_bleu_presentation"></div>
+        <div id="presentation">Discentem in prima anno de Reseauex & Telecommunicationibus, habeo solidas facultates in Linux ac in ParrotOS. Commodo in technologiis ut Docker, HTML, CSS, JavaScript, C++ et Python, possum evolvere applicationes et sitos web efficaciter. Matura et bono animo societatis, sum fervens de mundo informaticae.</div>
+        <h2 id="titre_education" >Formation</h2>
+        <div id="barre_bleu_education"></div>
+        <div id="barre_vertical"></div>
+        <div class="point point1"></div>
+        <div id="iut_date">Anno 20XX - 20XX</div>
+        <div id="iut_ville">Example City, 12345</div>
+        <div id="iut">Universitas Example</div>
+        <div id="iut_formation">Gradus - Exempli Gratia, Informatica - in formatione initiali</div>
+        <div class="point point2"></div>
+        <div id="lycee_date">Anno 20XX - 20XX</div>
+        <div id="lycee_ville">Example City, 12345</div>
+        <div id="lycee">Schola Secondaria Example</div>
+        <div id="lycee_formation">Baccalaureatus - Exempli Gratia, Scientia Computationis et Mathematica</div>
+        <h2 id="titre_centres">centres d'int&eacute;r&ecirc;ts</h2>
+        <div id="barre_bleu_centres"></div>
+        <div id="centres">Natatio, cursus pedestris, cyclismus, equitatio (in certaminibus), excursio. Certamen hacking (FCSC et alia CTF), compositio musicae, peregrinationes, programmatio. Sum benefactor in associatione <a href="https://example.com" class="semi_gras">Example</a> sectio “Help and Awarness” quae adiuvat personas victimas piraticae. Sumus circa quinquaginta membra, situati in tota Gallia. Dono circa decem horas mensibus ex mense Augusto 20XX.</div>
+        <div id="banniere_gauche">
+            <img id="photo" src="photo_profil.png" alt="photo de profil format rond"/>
+            <h2 id="contact">contactus</h2>
+            <address>
+                <div id="barre_bleu_gauche"></div>
+                <img id="icone_tel" src="http://www.clipartbest.com/cliparts/9i4/o5R/9i4o5RkiE.png" alt="icône de contact t&eacute;l&eacute;phone"/>
+                <div id="phone">Numero Telephoni: +XX X XX XX XX XX</div>
+                <img id="icone_mail" src="https://pic.onlinewebfonts.com/svg/img_428476.png" alt="icone adresse email"/>
+                <div id="adresse_mail">email: nomen.nescio@example.com</div>
+                <img id="icone_date_naissance" src="https://cdn-icons-png.flaticon.com/512/104/104980.png" alt="icone date de naissance"/>
+                <div id="date_naissance">Natus die: XX/XX/XXXX</div>
+                <img id="icone_adresse_postale" src="https://cdn.icon-icons.com/icons2/1579/PNG/512/3586361-location-map-navigation-pointer_107948.png" alt="icone adresse postale">
+                <div id="adresse_postale">Domus: Via Example, 123, Example City, Example Country</div>
+            </address>
+            <h2 id="titre_competences">competentiae</h2>
+            <div id="barre_bleu_gauche_2"></div>
+            <ul id="competences">
+                <li>Bona cognitio in Linux, praesertim in distributionibus ParrotOS, Ubuntu et Kali Linux</li>
+                <li>Experientia in usu Docker, pro gestione containerorum. Et in usu machinarum virtualium pro virtualizatione</li>
+                <li>Bona notitia linguarum programmationis velut HTML, CSS, Javascript, C++ et Python</li>
+                <!-- Autres compétences... -->
+            </ul>
+            <h2 id="langues">linguae</h2>
+            <div id="barre_bleu_gauche_3"></div>
+            <div id="anglais">Lingua Anglica: Niveau <span class="semi_gras">B1</span></div>
+            <div id="allemand">Lingua Germanica: Niveau <span class="semi_gras">A2</span></div>
+        </div>
+    </div>
+</body>
+</html>
