@@ -6,7 +6,7 @@ Les classes CSS sont utilisées pour définir des styles réutilisables qui peuv
 * `point` : cette classe est utilisée pour les points sur la frise chronologique verticale dans la section formation. Elle définit la taille, la forme, la couleur et la position des points.
 * `point1` et `point2` : ces classes sont utilisées pour positionner les points sur la frise chronologique verticale dans la section formation. Elles définissent la position absolue des points le long de la barre verticale.
 * `semi_gras` : cette classe est utilisée pour appliquer un style de police semi-gras aux éléments de texte sélectionnés, tels que les niveaux de langue dans la section langues.
-1. **ID CSS** :
+2. **ID CSS** :
 
 Les ID CSS sont utilisés pour définir des styles uniques qui sont appliqués à un seul élément HTML. Dans ce CV, les ID suivants sont utilisés :
 
@@ -22,7 +22,7 @@ Les ID CSS sont utilisés pour définir des styles uniques qui sont appliqués �
 * `presentation`, `iut_date`, `iut_ville`, `iut`, `iut_formation`, `lycee_date`, `lycee_ville`, `lycee`, `lycee_formation`, `lycee_spe` et `lycee_other` : ces ID sont appliqués aux div qui contiennent le texte des sections respectives dans la partie principale du CV. Ils définissent la police, la position et la couleur du texte.
 * `barre_bleu_presentation`, `barre_bleu_education` et `barre_bleu_centres` : ces ID sont appliqués aux div qui contiennent les barres bleues de séparation dans la partie principale du CV. Ils définissent la couleur, la taille et la position des barres.
 * `barre_vertical` : cet ID est appliqué à la div qui contient la barre verticale dans la section formation de la partie principale du CV. Il définit la couleur, la taille et la position de la barre.
-1. **Sémantique** :
+3. **Sémantique** :
 
 La sémantique HTML est utilisée pour donner un sens aux éléments HTML et améliorer l'accessibilité et le référencement du CV. Dans ce CV, les éléments HTML suivants sont utilisés de manière sémantique :
 
