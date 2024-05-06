@@ -1,4 +1,11 @@
 # CV
+<div>
+  <img src="https://skillicons.dev/icons?i=html" height="35" alt="html5 logo"  />
+  <img width="12" />
+  <img src="https://skillicons.dev/icons?i=css" height="35" alt="css3 logo"  />
+  </div>
+
+
 1. **Classes CSS** :
 
 Les classes CSS sont utilisées pour définir des styles réutilisables qui peuvent être appliqués à plusieurs éléments HTML. Dans ce CV, les classes suivantes sont utilisées :
